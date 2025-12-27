@@ -1,4 +1,4 @@
-// Tip2Trip
+// Tip2Trip-Mohammad Ayaz
 import {Server} from "socket.io";
 import express from "express";
 import http from "http";
@@ -7,10 +7,12 @@ const app = express();
 
 const server = http.createServer(app);
 
+const origins = (process.env.URL || '').split(',').map(s => s.trim()).filter(Boolean);
 const io = new Server(server, {
     cors:{
-        origin:process.env.URL,
-        methods:['GET','POST']
+        origin: origins.length ? origins : '*',
+        methods:['GET','POST'],
+        credentials: true
     }
 })
 

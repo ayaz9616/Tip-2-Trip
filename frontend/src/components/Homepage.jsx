@@ -7,6 +7,7 @@ import { Plane, MapPin, Users, Calendar, Globe, Mountain, Camera, Heart } from '
 import { Link, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import { toast } from 'sonner'
+import Navbar from './Navbar'
 
 const Homepage = () => {
     const [isLogin, setIsLogin] = useState(false)
@@ -57,6 +58,8 @@ const Homepage = () => {
 
     if (user) {
         return (
+            <>
+            <Navbar/>
             <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
                 <div className="container mx-auto px-4 py-8">
                     <div className="text-center mb-12">
@@ -127,10 +130,13 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
+            </>
+            
         )
     }
 
     return (
+
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
             {/* Hero Section */}
             <div className="container mx-auto px-4 py-16">

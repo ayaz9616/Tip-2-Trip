@@ -1,4 +1,4 @@
-// Tip2Trip
+// Tip2Trip-Mohammad Ayaz
 import express from "express";
 import { editProfile, followOrUnfollow, getProfile, getSuggestedUsers, login, logout, register } from "../controllers/user.controller.js";
 import isAuthenticated from "../middlewares/isAuthenticated.js";

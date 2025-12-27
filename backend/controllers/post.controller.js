@@ -108,6 +108,7 @@ export const getAllPost = async (req, res) => {
         })
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: 'Failed to fetch posts', success: false });
     }
 };
 export const getUserPost = async (req, res) => {
@@ -130,6 +131,7 @@ export const getUserPost = async (req, res) => {
         })
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: 'Failed to fetch user posts', success: false });
     }
 }
 export const likePost = async (req, res) => {
@@ -162,7 +164,8 @@ export const likePost = async (req, res) => {
 
         return res.status(200).json({message:'Post liked', success:true});
     } catch (error) {
-
+        console.log(error);
+        return res.status(500).json({ message: 'Failed to like post', success: false });
     }
 }
 export const dislikePost = async (req, res) => {
@@ -196,7 +199,8 @@ export const dislikePost = async (req, res) => {
 
         return res.status(200).json({message:'Post disliked', success:true});
     } catch (error) {
-
+        console.log(error);
+        return res.status(500).json({ message: 'Failed to dislike post', success: false });
     }
 }
 export const addComment = async (req,res) =>{
@@ -250,6 +254,7 @@ export const addComment = async (req,res) =>{
 
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: 'Failed to add comment', success: false });
     }
 };
 export const getCommentsOfPost = async (req,res) => {
@@ -264,6 +269,7 @@ export const getCommentsOfPost = async (req,res) => {
 
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: 'Failed to fetch comments', success: false });
     }
 }
 export const deletePost = async (req,res) => {
@@ -295,6 +301,7 @@ export const deletePost = async (req,res) => {
 
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: 'Failed to delete post', success: false });
     }
 }
 export const bookmarkPost = async (req,res) => {
@@ -320,6 +327,7 @@ export const bookmarkPost = async (req,res) => {
 
     } catch (error) {
         console.log(error);
+        return res.status(500).json({ message: 'Failed to update bookmark', success: false });
     }
 }
 export const searchPosts = async (req, res) => {
